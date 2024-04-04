@@ -23,7 +23,7 @@ function useNotification() {
       onClose?: () => void,
       autoHideDuration?: number,
     ) => {
-      let key: SnackbarKey | undefined; key = enqueueSnackbar(<StyledMessage>{message}</StyledMessage>, {
+      let key: any | undefined; key = enqueueSnackbar(<StyledMessage>{message}</StyledMessage>, {
         variant,
         autoHideDuration: autoHideDuration || 5000,
         onClose,
