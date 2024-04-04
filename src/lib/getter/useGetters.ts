@@ -110,7 +110,7 @@ export function useInitializeGetters() {
   useEffect(() => {
     (async () => {
       const _getterConfig = [];
-      for (const f of data?.files ?? []) {
+      for (const f of (data as any)?.files ?? []) {
         if (!f.name.match(/\.(fc|func)/)) continue;
         _getterConfig.push(...(await parseGetters(f.content)));
       }
