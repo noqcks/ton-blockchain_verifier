@@ -6,7 +6,7 @@ import { SourcesRegistry as SourcesRegistryContract } from "./wrappers/sources-r
 
 export function useLoadSourcesRegistryInfo() {
   const address = Address.parse(window.sourcesRegistryAddress);
-  return useQuery({ queryKey: ["sourcesRegistry", address], queryFn: async () => {
+  return useQuery(["sourcesRegistry", address], async () => {
     const tc = await getClient();
     const admin = await getAdmin(address, tc);
     const contract = tc.open(SourcesRegistryContract.createFromAddress(address));
