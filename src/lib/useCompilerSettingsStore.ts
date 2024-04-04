@@ -118,7 +118,7 @@ export function useCompilerSettingsStore() {
   const compilerStore = _useCompilerSettingsStore();
   const {
     data: { tactVersions },
-  } = useRemoteConfig();
+  }: { data: { tactVersions: string[] } } = useRemoteConfig();
 
   function prepareCommandLine() {
     const cmd = files
