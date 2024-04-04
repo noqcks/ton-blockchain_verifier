@@ -41,7 +41,7 @@ export const useCustomMutation = <
       invalidate();
 
       queryClient.setQueryData(["CustomMutationError", mutationKey], false);
-      return await mutationFn(...params);
+      return await mutationFn(variables);
     },
     {
       ...options,
