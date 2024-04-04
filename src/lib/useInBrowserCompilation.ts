@@ -31,7 +31,7 @@ export function useInBrowserCompilation() {
     const { FuncCompiler } = await import("@ton-community/func-js");
 
     const sources: SourceEntry[] =
-      data?.files?.map((file) => ({ filename: file.name, content: file.content })) ?? [];
+      (data as any)?.files?.map((file: { name: string; content: string; }) => ({ filename: file.name, content: file.content })) ?? [];
 
     const funcVersion = (data?.compilerSettings as FuncCompilerSettings)?.funcVersion;
 
