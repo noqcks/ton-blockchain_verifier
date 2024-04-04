@@ -137,7 +137,7 @@ function Response({
 }
 
 function ParsedGetterComponent({ getter }: { getter: StateGetter }) {
-  const { data, isLoading, mutate, error } = useQueryGetter(getter);
+  const { data, isLoading, error } = useQuery(getter);
 
   return (
     <GetterBox>
