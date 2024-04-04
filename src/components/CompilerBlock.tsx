@@ -16,7 +16,13 @@ TimeAgo.addDefaultLocale(en);
 export function CompilerBlock() {
   const { data } = useLoadContractProof();
 
-  const compilerSettings = (data as any).compilerSettings;
+  interface CompilerData {
+  compiler: string;
+  compilerSettings: any;
+  verificationDate?: Date;
+}
+
+const compilerSettings = (data as CompilerData).compilerSettings;
 
   const dataRows: DataRowItem[] = [];
 
