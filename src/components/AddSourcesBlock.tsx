@@ -21,7 +21,7 @@ export function AddSourcesBlock() {
   const walletAddress = useTonAddress();
   const { hasFiles } = useFileStore();
   const { step, proceedToPublish, toggleSection, currentSection } = usePublishStore();
-  const { mutate, data, error, isLoading, compileStatus } = useSubmitSources();
+  const { mutate, data, error, isPending: isLoading, compileStatus } = useSubmitSources();
 
   const canPublish = !!data?.result?.msgCell;
 
