@@ -76,7 +76,7 @@ function App() {
   const {
     data,
   } = useRemoteConfig();
-  const funcVersions = data?.funcVersions;
+  const funcVersions = (data as any)?.funcVersions;
   useEffect(() => {
     if ((funcVersions?.length ?? 0) > 0) {
       initialize(funcVersions![0]);
