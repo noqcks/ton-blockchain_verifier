@@ -30,10 +30,10 @@ export const useCustomMutation = <
   };
 
   const queryClient = useQueryClient();
-  const query = useQuery<TData, TError>(
-    ["CustomMutation", mutationKey],
-    async () => await Promise.resolve(false as unknown as TData)
-  );
+  const query = useQuery<TData, TError>({
+    queryKey: ["CustomMutation", mutationKey],
+    queryFn: async () => await Promise.resolve(false as unknown as TData)
+  });
   const mutation = useMutation<TData, TError, TVariables, TContext>(
     mutationKey,
     async (...params) => {
