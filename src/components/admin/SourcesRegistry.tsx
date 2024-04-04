@@ -51,7 +51,7 @@ function SourcesRegistry() {
 
   const adminForm = useForm<AdminForm>({
     defaultValues: {
-      admin: data?.admin || "",
+      admin: data?.admin ?? "",
     },
   });
 
