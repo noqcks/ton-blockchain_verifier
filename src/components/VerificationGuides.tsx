@@ -49,7 +49,7 @@ export function ManualVerificationGuide() {
           2. Save this file locally as <CommandLabel>sources.json</CommandLabel> :{" "}
           <CommandEllipsisLabel
             onClick={() =>
-              !!contractProofData && downloadJson(contractProofData)
+              !!contractProofData && downloadJson(JSON.stringify(contractProofData))
             }>
             {contractProofData?.ipfsHttpLink}
           </CommandEllipsisLabel>
