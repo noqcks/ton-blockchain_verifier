@@ -19,6 +19,15 @@ export function useRemoteConfig() {
         tactVersions: tactVersions as string[],
       };
     },
-    { enabled, initialData: { funcVersions: [], tactVersions: [] } },
+    { queryKey: ["remoteConfig"], queryFn: async () => {
+      const { funcVersions, tactVersions } = await (await fetch(configURL)).json();
+
+      setEnabled(false);
+
+      return {
+        funcVersions: funcVersions as string[],
+        tactVersions: tactVersions as string[],
+      };
+    }, options: { enabled, initialData: { funcVersions: [], tactVersions: [] } } }
   );
 }
