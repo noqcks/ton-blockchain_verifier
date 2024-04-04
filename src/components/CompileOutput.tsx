@@ -54,7 +54,7 @@ export const ErrorRowValue = styled(DataRowValue)({
 
 export function CompileOutput() {
   const { data: submitSourcesData, error } = useSubmitSources();
-  const { data: contractInfoData } = useLoadContractInfo();
+  const { data: contractInfoData } = useLoadContractInfo() as { data?: { codeCellHash?: { base64?: string } } };
 
   const compileResult = submitSourcesData?.result?.compileResult;
   const hints = submitSourcesData?.hints ?? [];
