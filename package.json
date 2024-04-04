@@ -35,7 +35,7 @@
     "func-js-bin-0.4.2": "npm:@ton-community/func-js-bin@^0.4.2",
     "func-js-bin-0.4.3": "npm:@ton-community/func-js-bin@^0.4.3",
     "func-js-bin-0.4.4": "npm:@ton-community/func-js-bin@^0.4.4",
-    "immer": "^9.0.17",
+    "immer": "^10.0.4",
     "javascript-time-ago": "^2.5.7",
     "jszip": "^3.10.1",
     "notistack": "^2.0.8",
