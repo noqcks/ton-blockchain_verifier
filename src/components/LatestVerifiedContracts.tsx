@@ -52,7 +52,7 @@ const CompilerText = styled(Box)({
 });
 
 export function LatestVerifiedContracts() {
-  const { data: latestVerifiedContracts, isLoading } = useLoadLatestVerified();
+  const { data: latestVerifiedContracts = [], isLoading } = useLoadLatestVerified();
   const navigate = useNavigatePreserveQuery();
   const skeletons = useRef(new Array(30).fill(null).map((_) => Math.random() * 100));
 
