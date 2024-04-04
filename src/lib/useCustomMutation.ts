@@ -35,13 +35,14 @@ export const useCustomMutation = <
     queryFn: async () => await Promise.resolve(false as unknown as TData)
   });
   const mutation = useMutation<TData, TError, TVariables, TContext>(
-    async (variables: TVariables) => {
-      // TODO maybe sometimes invalidation should be optional?
-      invalidate();
+    {
+      mutationFn: async (variables: TVariables) => {
+        // TODO maybe sometimes invalidation should be optional?
+        invalidate();
 
-      queryClient.setQueryData(["CustomMutationError", mutationKey], false);
-      return await mutationFn(variables);
-    },
+        queryClient.setQueryData(["CustomMutationError", mutationKey], false);
+        return await mutationFn(variables);
+      },
     {
       ...options,
       onSuccess: (data, variables, context) => {
