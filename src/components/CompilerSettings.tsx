@@ -35,7 +35,7 @@ function CompilerSettings() {
 
   const {
     data: { funcVersions, tactVersions },
-  } = useRemoteConfig();
+  } = useRemoteConfig() as { data: { funcVersions: string[], tactVersions: string[] } };
 
   return (
     <Box mt={4}>
