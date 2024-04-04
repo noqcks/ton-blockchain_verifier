@@ -49,7 +49,7 @@ const SourceCodeTabs = styled(Tabs)({
 });
 
 function ContractSourceCode() {
-  const { data: contractProof } = useLoadContractProof();
+  const { data: contractProof } = useLoadContractProof() as { data?: { hasOnchainProof?: boolean; files?: any[]; }; };
   const [value, setValue] = useState<number | undefined>(undefined);
   const isExtraSmallScreen = useMediaQuery("(max-width: 450px)");
   const modifiedCodeBlock = useMediaQuery("(max-width: 600px)");
