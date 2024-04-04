@@ -36,7 +36,7 @@ export const useCustomMutation = <
   });
   const mutation = useMutation<TData, TError, TVariables, TContext>(
     mutationKey,
-    async (...params) => {
+    async (variables: TVariables) => {
       // TODO maybe sometimes invalidation should be optional?
       invalidate();
 
