@@ -25,8 +25,8 @@ export const useCustomMutation = <
   invalidate: () => void;
 } => {
   const invalidate = () => {
-    queryClient.invalidateQueries(["CustomMutation", mutationKey]);
-    queryClient.invalidateQueries(["CustomMutationError", mutationKey]);
+    queryClient.invalidateQueries({queryKey: ["CustomMutation", mutationKey]});
+    queryClient.invalidateQueries({queryKey: ["CustomMutationError", mutationKey]});
   };
 
   const queryClient = useQueryClient();
