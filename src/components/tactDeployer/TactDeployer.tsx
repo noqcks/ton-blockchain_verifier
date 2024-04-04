@@ -135,7 +135,7 @@ export function ContractBlock() {
 function DeployBlock() {
   const [value, setValue] = useState("0.5");
   const { data, error } = useTactDeployer({ workchain: 0 });
-  const { sendTXN, status } = useDeployContract(value, data?.stateInit, data?.address);
+  const { sendTXN, status } = useDeployContract(value, data?.stateInit ?? '', data?.address);
   const { markPreloaded } = usePreload();
   const navigate = useNavigatePreserveQuery();
   const file = useFileStore();
