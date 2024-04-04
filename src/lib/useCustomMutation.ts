@@ -34,9 +34,13 @@ export const useCustomMutation = <
     ["CustomMutation", mutationKey],
     async () => await Promise.resolve(false as unknown as TData),
     {
-      retry: false,
-      cacheTime: Infinity,
-      staleTime: Infinity,
+      queryKey: ["CustomMutation", mutationKey],
+      queryFn: async () => await Promise.resolve(false as unknown as TData),
+      options: {
+        retry: false,
+        cacheTime: Infinity,
+        staleTime: Infinity,
+      }
     }
   );
   const mutation = useMutation<TData, TError, TVariables, TContext>(
