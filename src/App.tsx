@@ -74,8 +74,9 @@ function App() {
   // Initialize func version
   const { initialize } = useCompilerSettingsStore(); // TODO IN PROG
   const {
-    data: { funcVersions },
+    data,
   } = useRemoteConfig();
+  const funcVersions = data?.funcVersions;
   useEffect(() => {
     if ((funcVersions?.length ?? 0) > 0) {
       initialize(funcVersions![0]);
