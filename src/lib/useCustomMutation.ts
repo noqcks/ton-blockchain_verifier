@@ -37,7 +37,7 @@ export const useCustomMutation = <
       retry: false,
       cacheTime: Infinity,
       staleTime: Infinity,
-    },
+    } as const,
   );
   const queryError = useQuery<TError, TData>(
     ["CustomMutationError", mutationKey],
@@ -46,7 +46,7 @@ export const useCustomMutation = <
       retry: false,
       cacheTime: Infinity,
       staleTime: Infinity,
-    },
+    } as const,
   );
   const mutation = useMutation<TData, TError, TVariables, TContext>(
     mutationKey,
