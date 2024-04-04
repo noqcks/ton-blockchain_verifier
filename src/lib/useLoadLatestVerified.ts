@@ -5,7 +5,7 @@ import { randomFromArray, backends } from "./useSubmitSources";
 export function useLoadLatestVerified() {
   const backend = randomFromArray(backends);
 
-  const { isLoading, error, data } = useQuery(["latestVerifiedContracts"], async () => {
+  const { isLoading, error, data } = useQuery("latestVerifiedContracts", async () => {
     const response = await fetch(`${backend}/latestVerified`, {
       method: "GET",
     });
