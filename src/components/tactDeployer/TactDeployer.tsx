@@ -35,7 +35,7 @@ async function fetchFromIpfs(hash: string) {
 function useTactDeployer({ workchain }: { workchain: 0 | -1 }) {
   const { ipfsHash } = useParams();
 
-  const { data, error, isLoading } = useQuery(["tactDeploy", ipfsHash], async () => {
+  const { data, error, isLoading } = useQuery("tactDeploy", ipfsHash, async () => {
     if (!ipfsHash) return null;
     const tc = await getClient();
     const content = await fetchFromIpfs(ipfsHash).then((res) => res.json());
