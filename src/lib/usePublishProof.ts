@@ -9,7 +9,7 @@ import { useLoadSourcesRegistryInfo } from "./useLoadSourcesRegistryInfo";
 
 export function usePublishProof() {
   const { data: submitSourcesData } = useSubmitSources();
-  const { data: contractInfo } = useLoadContractInfo();
+  const { data: contractInfo } = useLoadContractInfo() as { data: { codeCellToCompileBase64: string } };
   const { data: sourcesRegistryData } = useLoadSourcesRegistryInfo();
 
   const { sendTXN, data, clearTXN } = useSendTXN("publishProof", async (count: number) => {
