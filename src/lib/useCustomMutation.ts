@@ -39,15 +39,6 @@ export const useCustomMutation = <
       staleTime: Infinity,
     }
   );
-  const queryError = useQuery<TError, TData>(
-    ["CustomMutationError", mutationKey],
-    async () => await Promise.resolve(false as unknown as TError),
-    {
-      retry: false,
-      cacheTime: Infinity,
-      staleTime: Infinity,
-    }
-  );
   const mutation = useMutation<TData, TError, TVariables, TContext>(
     mutationKey,
     async (...params) => {
