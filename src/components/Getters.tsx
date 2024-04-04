@@ -184,7 +184,8 @@ function ParsedGetterComponent({ getter }: { getter: StateGetter }) {
 }
 
 function CustomGetterComponent({ getter }: { getter: CustomStateGetter }) {
-  const { data, isLoading, mutate, error } = useQueryGetter(getter);
+  const { data, isLoading, error } = useQuery(getter.queryKey, getter.queryFn);
+  const { mutate } = useMutation(getter.mutationFn);
 
   return (
     <GetterBox>
