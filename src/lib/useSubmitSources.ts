@@ -58,7 +58,7 @@ export function useSubmitSources() {
   const { clear, setStatus, status } = useSubmitSourcesStatusStore();
   const { data: verifierRegistryData } = useLoadVerifierRegistryInfo();
 
-  const verifierRegistryConfig = verifierRegistryData?.find((v) => v.name === window.verifierId);
+  const verifierRegistryConfig = (verifierRegistryData as any[]).find((v) => v.name === window.verifierId);
 
   const mutation = useCustomMutation(["submitSources"], async () => {
     if (!contractAddress) return;
