@@ -3,7 +3,7 @@ import { useLoadContractProof } from "./useLoadContractProof";
 import { useEffect } from "react";
 
 export function useLoadContractSourceCode() {
-  const { data } = useLoadContractProof();
+  const { data } = useLoadContractProof() as { data?: { files?: any; hasOnchainProof?: any; } };
 
   useEffect(() => {
     if (!data?.files) return;
