@@ -21,7 +21,7 @@ export async function getProofIpfsLink(hash: string): Promise<string | null> {
 
 export function useLoadContractProof() {
   const { contractAddress } = useContractAddress();
-  const { data: contractInfo, error: contractError } = useLoadContractInfo();
+  const { data: contractInfo, error: contractError } = useLoadContractInfo() as { data: { codeCellToCompileBase64: string; }, error: any; };
   const { status: publishProofStatus } = usePublishProof();
   const { isLoading, error, data, refetch } = useQuery<
     Partial<SourcesData> & {
