@@ -117,5 +117,5 @@ export function useInitializeGetters() {
       setGetters(_getterConfig);
       clear();
     })();
-  }, [data?.files]);
+  }, [data]);
 }
