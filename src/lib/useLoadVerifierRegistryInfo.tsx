@@ -6,7 +6,7 @@ import { useLoadSourcesRegistryInfo } from "./useLoadSourcesRegistryInfo";
 
 export function useLoadVerifierRegistryInfo() {
   const { data: sourceRegistryData } = useLoadSourcesRegistryInfo();
-  return useQuery({ queryKey: ["verifierRegistry", sourceRegistryData?.verifierRegistry], queryFn: async () => {
+  return useQuery(["verifierRegistry", sourceRegistryData?.verifierRegistry], async () => {
     const tc = await getClient();
     const contract = tc.open(
       VerifierRegistryContract.createFromAddress(
