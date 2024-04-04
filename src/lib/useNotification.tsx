@@ -27,7 +27,7 @@ function useNotification() {
         variant,
         autoHideDuration: autoHideDuration || 5000,
         onClose,
-        onClick: () => closeSnackbar(key),
+        // Removed onClick as it's not a valid option for enqueueSnackbar in notistack
         action: () => (
           <IconButton>
             <CloseIcon sx={{ color: "#fff", stroke: "#fff", width: 20, height: 20 }} />
