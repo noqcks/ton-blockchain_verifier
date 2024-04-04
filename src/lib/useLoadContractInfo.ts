@@ -23,7 +23,7 @@ export function tryLoadLibraryCodeCellHash(exoticCodeCell: Cell) {
 export function useLoadContractInfo() {
   const { contractAddress } = useContractAddress();
 
-  const { isLoading, error, data } = useQuery({ queryKey: [contractAddress, "info"], queryFn: async () => {
+  const { isLoading, error, data } = useQuery([contractAddress, "info"], async () => {
     if (!contractAddress) return null;
     const client = await getClient();
 
