@@ -15,7 +15,7 @@ export function useQueryGetter(getter: StateGetter) {
   const { contractAddress } = useContractAddress();
   const { getters } = useGetters();
 
-  return useMutation([contractAddress, "getter", getter.name], async () => {
+  return useMutation(async () => {
     const tc = await getClient();
     if (!contractAddress) return;
     if (!getters) return;
