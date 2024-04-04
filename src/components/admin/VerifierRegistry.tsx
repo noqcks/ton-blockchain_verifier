@@ -130,7 +130,7 @@ function VerifierRegsitryForm({
 
     try {
       const result = await requestTXN(
-        sourcesRegistry?.verifierRegistry ?? "",
+        sourcesRegistry ?? "",
         toNano(isNew ? "1000" : "0.01"),
         updateVerifier({
           id: sha256BN(values.name),
