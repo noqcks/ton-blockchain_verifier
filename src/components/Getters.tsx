@@ -12,6 +12,7 @@ import {
   CustomGetterInput,
 } from "./Getters.styled";
 import { useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Box, IconButton, Skeleton, Table, TableBody, TableRow } from "@mui/material";
 import { useGetters, StateGetter, Parameter } from "../lib/getter/useGetters";
 import { CustomStateGetter, useCustomGetter } from "../lib/getter/useCustomGetter";
